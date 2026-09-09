@@ -24,7 +24,7 @@ app.add_middleware(
         "https://border-sentry.vercel.app",
         "http://localhost:5173",
     ],
-    allow_credentials=True,
+    allow_credentials=False,
     allow_methods=["*"],
     allow_headers=["*"],
 )

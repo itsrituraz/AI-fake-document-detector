@@ -12,6 +12,8 @@ import OfficerDecisionConsole from './components/OfficerDecisionConsole';
 import HistoryModal from './components/HistoryModal';
 import { ShieldCheck, Sparkles, RefreshCw } from 'lucide-react';
 
+const API_URL = import.meta.env.VITE_API_URL || '';
+
 export default function App() {
   const [report, setReport] = useState(null);
   const [docPreviewUrl, setDocPreviewUrl] = useState(null);
@@ -22,7 +24,7 @@ export default function App() {
 
   // Fetch pre-generated demo specimen presets on load
   useEffect(() => {
-    fetch('/api/specimens')
+    fetch(`${API_URL}/api/specimens`)
       .then((res) => res.json())
       .then((data) => {
         if (data.specimens) setPresets(data.specimens);
@@ -46,7 +48,7 @@ export default function App() {
       // Preview URL for the visual inspector
       setDocPreviewUrl(URL.createObjectURL(docFile));
 
-      const res = await fetch('/api/screen', {
+      const res = await fetch(`${API_URL}/api/screen`, {
         method: 'POST',
         body: formData
       });
@@ -75,14 +77,14 @@ export default function App() {
     setIsLoading(true);
     try {
       // 1. Fetch document blob
-      const docRes = await fetch(`/static/specimens/${presetMeta.file}`);
+      const docRes = await fetch(`${API_URL}/static/specimens/${presetMeta.file}`);
       const docBlob = await docRes.blob();
       const docFile = new File([docBlob], presetMeta.file, { type: 'image/jpeg' });
 
       // 2. Fetch matching selfie blob if defined
       let selfieFile = null;
       if (presetMeta.matching_selfie) {
-        const selfieRes = await fetch(`/static/specimens/${presetMeta.matching_selfie}`);
+        const selfieRes = await fetch(`${API_URL}/static/specimens/${presetMeta.matching_selfie}`);
         const selfieBlob = await selfieRes.blob();
         selfieFile = new File([selfieBlob], presetMeta.matching_selfie, { type: 'image/jpeg' });
       }

@@ -1,0 +1,63 @@
+{
+  "description": "Mock Border Control Watchlist & Stolen/Lost Travel Documents (SLTD) Database",
+  "version": "1.0.0",
+  "last_updated": "2026-09-08T00:00:00Z",
+  "blacklisted_documents": [
+    {
+      "document_number": "L898902C3",
+      "country_code": "UTO",
+      "document_type": "passport",
+      "alert_type": "STOLEN_TRAVEL_DOCUMENT",
+      "severity": "CRITICAL",
+      "subject_name": "ERIKSSON ANNA",
+      "notes": "Reported stolen in transit (Interpol SLTD Notice A-9921/2025)",
+      "date_flagged": "2025-11-12"
+    },
+    {
+      "document_number": "E12345678",
+      "country_code": "GBR",
+      "document_type": "passport",
+      "alert_type": "FRAUD_SUSPECT",
+      "severity": "CRITICAL",
+      "subject_name": "SMITH JOHN",
+      "notes": "Known alias used in identity fraud syndicates",
+      "date_flagged": "2026-01-15"
+    },
+    {
+      "document_number": "V99887766",
+      "country_code": "USA",
+      "document_type": "visa",
+      "alert_type": "REVOKED_VISA",
+      "severity": "HIGH",
+      "subject_name": "DOE JANE",
+      "notes": "Visa revoked due to overstay violation and fraudulent employer claims",
+      "date_flagged": "2026-03-20"
+    },
+    {
+      "document_number": "ID-908124",
+      "country_code": "CAN",
+      "document_type": "national_id",
+      "alert_type": "COUNTERFEIT_SERIES",
+      "severity": "HIGH",
+      "subject_name": "TREMBLAY MARC",
+      "notes": "Batch number flagged by national issuing authority as counterfeit series",
+      "date_flagged": "2026-04-02"
+    }
+  ],
+  "persons_of_interest": [
+    {
+      "full_name": "ERIKSSON ANNA",
+      "date_of_birth": "740812",
+      "nationality": "UTO",
+      "reason": "Wanted for international financial fraud (Interpol Red Notice)",
+      "action_required": "DETAIN_AND_NOTIFY_SUPERVISOR"
+    },
+    {
+      "full_name": "MALIK TARIQ",
+      "date_of_birth": "880514",
+      "nationality": "GBR",
+      "reason": "Border alert: travel restriction order in effect",
+      "action_required": "SECONDARY_SCREENING"
+    }
+  ]
+}

@@ -1,0 +1,15 @@
+version: '3.8'
+
+services:
+  screening-system:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    container_name: border-document-screening-system
+    ports:
+      - "8000:8000"
+    environment:
+      - PYTHONUNBUFFERED=1
+    volumes:
+      - ./data:/app/data
+    restart: unless-stopped

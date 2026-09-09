@@ -1,0 +1,39 @@
+{
+  "description": "Mock Civil Registry & Consular Document Issuance Registry",
+  "version": "1.0.0",
+  "records": [
+    {
+      "document_number": "P12345678",
+      "document_type": "passport",
+      "issuing_country": "USA",
+      "holder_name": "JOHNSON MICHAEL",
+      "dob": "1985-06-15",
+      "gender": "M",
+      "issue_date": "2020-07-01",
+      "expiry_date": "2030-06-30",
+      "status": "VALID_ACTIVE"
+    },
+    {
+      "document_number": "GBR88776655",
+      "document_type": "passport",
+      "issuing_country": "GBR",
+      "holder_name": "CLARKE SOPHIA",
+      "dob": "1992-11-23",
+      "gender": "F",
+      "issue_date": "2021-03-10",
+      "expiry_date": "2031-03-09",
+      "status": "VALID_ACTIVE"
+    },
+    {
+      "document_number": "V10293847",
+      "document_type": "visa",
+      "issuing_country": "USA",
+      "holder_name": "JOHNSON MICHAEL",
+      "visa_type": "B1/B2 TOURIST",
+      "entries": "M",
+      "issue_date": "2024-01-10",
+      "expiry_date": "2029-01-09",
+      "status": "VALID_ACTIVE"
+    }
+  ]
+}

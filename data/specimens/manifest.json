@@ -1,0 +1,73 @@
+{
+  "specimens": [
+    {
+      "file": "authentic_passport.jpg",
+      "type": "passport",
+      "label": "Authentic Passport (Clean Specimen)",
+      "expected_risk": "LOW",
+      "matching_selfie": "selfie_matching_johnson.jpg",
+      "holder": "MICHAEL DAVID JOHNSON",
+      "document_number": "P12345678"
+    },
+    {
+      "file": "tampered_passport_photo_spliced.jpg",
+      "type": "passport",
+      "label": "Tampered Passport (Photo Spliced)",
+      "expected_risk": "HIGH",
+      "matching_selfie": "selfie_matching_johnson.jpg",
+      "triggers": [
+        "ELA Compression Anomaly",
+        "Face Verification Mismatch"
+      ],
+      "holder": "MICHAEL DAVID JOHNSON",
+      "document_number": "P12345678"
+    },
+    {
+      "file": "tampered_passport_date_altered.jpg",
+      "type": "passport",
+      "label": "Tampered Passport (Expiry Date Altered)",
+      "expected_risk": "HIGH",
+      "matching_selfie": "selfie_matching_johnson.jpg",
+      "triggers": [
+        "Font Inconsistency",
+        "MRZ Checksum / Consistency Mismatch"
+      ],
+      "holder": "MICHAEL DAVID JOHNSON",
+      "document_number": "P12345678"
+    },
+    {
+      "file": "authentic_visa.jpg",
+      "type": "visa",
+      "label": "Authentic Schengen/Utopia Visa",
+      "expected_risk": "LOW",
+      "matching_selfie": "selfie_matching_johnson.jpg",
+      "holder": "MICHAEL JOHNSON",
+      "document_number": "V10293847"
+    },
+    {
+      "file": "tampered_visa_fake_stamp.jpg",
+      "type": "visa",
+      "label": "Tampered Visa (Distorted Stamp & Stay Altered)",
+      "expected_risk": "HIGH",
+      "matching_selfie": "selfie_matching_johnson.jpg",
+      "triggers": [
+        "Stamp Correlation Mismatch",
+        "Font Anomaly"
+      ],
+      "holder": "MICHAEL JOHNSON",
+      "document_number": "V10293847"
+    },
+    {
+      "file": "blacklisted_passport.jpg",
+      "type": "passport",
+      "label": "Blacklisted Passport (Interpol SLTD Match)",
+      "expected_risk": "CRITICAL",
+      "matching_selfie": "selfie_eriksson.jpg",
+      "triggers": [
+        "Interpol Stolen Travel Document Hit (L898902C3)"
+      ],
+      "holder": "ANNA MARIA ERIKSSON",
+      "document_number": "L898902C3"
+    }
+  ]
+}
